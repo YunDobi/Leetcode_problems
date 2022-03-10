@@ -1,1 +1,1 @@
-** This is the daily working of Leetcode **
+* This is the daily working of Leetcode *
