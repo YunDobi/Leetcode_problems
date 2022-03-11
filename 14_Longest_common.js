@@ -3,18 +3,17 @@
  * @return {string}
  */
 const longestCommonPrefix = function(strs) {
-  let result = ""
-  let temp = [];
-  for (let i = 0; i < strs.length; i++) {
-    let word = strs[i].split("")
-    for (let j = 0; j < word.length; j++) {
-      console.log(word[j])
-      temp.push(word[j])
-      if (temp.includes(word[j])) {
-        result += word[j]
-      }
-      console.log(result)
-    }
-  
+  //return if nothing
+  if (!strs.length) {
+    return '';
   }
+  //slice down if there is not common
+  for (let i = 0; i < strs[0].length; i++) {
+    for (let s of strs) {
+      if (s[i] !== strs[0][i]) {
+        return s.slice(0, i);
+      }
+    }
+  }
+  return strs[0];
 };
