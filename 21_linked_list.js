@@ -1,18 +1,32 @@
-
-const mergeTwoLists = function(list1, list2) {
-  const result = []
-  console.log(list1.val)
-  let longerlist = list1
-  //empty lists
-  if (list1.length === 0 && list2.length === 0) {
-    return result;
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+ const mergeTwoLists = function(list1, list2) {
+    
+  if (!list1) {
+    return list2;
   }
-  //find longer list
-  if (list2.length > list1.length) {
-    longerlist = list2
+  if (!list2) {
+    return list1;
   }
-  console.log(list1.length)
-  console.log(result)
+  const val1 = list1.val;
+  const val2 = list2.val;
+  let mergedNode;
+  if (val1 < val2) {
+    mergedNode = new ListNode(val1);
+    mergedNode.next = mergeTwoLists(list1.next, list2);
+  } else {
+    mergedNode = new ListNode(val2);
+    mergedNode.next = mergeTwoLists(list2.next, list1);
+  }
+  return mergedNode;
 };
-
-mergeTwoLists([1,2,4],[1,3,4]);
