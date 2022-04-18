@@ -1,7 +1,4 @@
-// /**
-//  * @param {number} x
-//  * @return {boolean}
-//  */
+//this is O(n)
 const isPalindrome = function(x) {
   let array_item = Array.from(String(x), Number);
   let reversed_array = [];

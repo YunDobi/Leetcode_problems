@@ -4,7 +4,7 @@
 //  */
 
 
-//this is the Kadana
+//this is the Kadane's Algorithum. If useing the bruce force, then time excuted
  var maxSubArray = function(nums) {
   let sum = 0;
   let maxSum = -Infinity;
