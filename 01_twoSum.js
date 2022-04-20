@@ -4,14 +4,14 @@
 const twoSum = function(nums, target) {
   let hash = {};
 
-for(let i = 0; i < nums.length; i++) {
-const n = nums[i];
+for (let i = 0; i < nums.length; i++) {
+    const n = nums[i];
     // console.log(hash[target - n])
-if(hash[target - n] !== undefined) {
-  return [hash[target - n], i];
-}
-hash[n] = i;
+    if (hash[target - n] !== undefined) {
+      return [hash[target - n], i];
+    }
+    hash[n] = i;
     // console.log(hash)
-}
-return []
+  }
+  return [];
 };
