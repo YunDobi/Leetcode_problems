@@ -17,3 +17,12 @@ const lengthOfLastWord = function(s) {
       };
   }
 };
+
+//typescript O(1) solution
+const lengthOfLastWord = function(s) {
+  const words = s.split(" ").filter((v) => v)
+  // console.log(words)
+  const maybeLast = words[words.length - 1]
+
+  return maybeLast ? maybeLast.length : 0
+};
