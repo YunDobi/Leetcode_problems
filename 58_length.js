@@ -14,6 +14,6 @@ const lengthOfLastWord = function(s) {
       } else {
           result = true;
           return strArray[strArray.length - counter].length;
-      }   
+      };
   }
 };
